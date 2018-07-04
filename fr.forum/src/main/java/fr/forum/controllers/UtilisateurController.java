@@ -19,7 +19,6 @@ public class UtilisateurController {
 
     @PostMapping("/Identification")
     public String identification(@ModelAttribute(value = "utilisateur") Utilisateur utilisateur, Model model) {
-
 	Utilisateur uRepoEmail = utilisateurJpaRepository.findByEmail(utilisateur.getEmail());
 	Utilisateur uRepoMotDePasse = utilisateurJpaRepository.findByMotDePasse(utilisateur.getMotDePasse());
 	if (uRepoEmail != null && uRepoMotDePasse != null) {

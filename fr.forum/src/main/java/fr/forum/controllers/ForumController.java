@@ -23,4 +23,14 @@ public class ForumController {
 	return "inscription";
     }
 
+    @GetMapping("/Rubrique")
+    public String rubrique() {
+	return "rubrique";
+    }
+
+    @GetMapping("/Sujet")
+    public String sujet() {
+	return "Sujet";
+    }
+
 }
