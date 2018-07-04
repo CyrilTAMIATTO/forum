@@ -15,6 +15,8 @@ public class Rubrique {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String titre;
+
+    @OneToMany
     private List<Sujet> listeSujets;
 
     public Rubrique() {

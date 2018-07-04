@@ -15,6 +15,8 @@ public class Commentaire {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Date dateCreation = new Date();
+
+    @ManyToOne
     private Utilisateur utilisateur;
     private String message;
 

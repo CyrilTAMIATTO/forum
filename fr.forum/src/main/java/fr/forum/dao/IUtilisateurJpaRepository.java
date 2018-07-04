@@ -10,7 +10,7 @@ public interface IUtilisateurJpaRepository extends JpaRepository<Utilisateur, Lo
     @Query("select u from Utilisateur u where u.email = :email")
     public Utilisateur findByEmail(String email);
 
-    @Query("select u from Utilisateur u where u.mdp = :mdp")
+    @Query("select u from Utilisateur u where u.motDePasse = :mdp")
     public Utilisateur findByMotDePasse(String mdp);
 
 }
