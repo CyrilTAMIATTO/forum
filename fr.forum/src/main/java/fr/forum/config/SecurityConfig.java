@@ -26,8 +26,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	http.cors().disable().csrf().disable().sessionManagement()
 		.sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().authorizeRequests()
 		.antMatchers(HttpMethod.OPTIONS).anonymous();
-	http.authorizeRequests().antMatchers("/static/**", "/api/**").permitAll().anyRequest().authenticated().and()
-		.formLogin().loginPage("/securitycontroller/login").loginProcessingUrl("/login")
+	http.authorizeRequests().antMatchers("/*/**", "/static/**", "/api/**").permitAll().anyRequest().authenticated()
+		.and().formLogin().loginPage("/securitycontroller/login").loginProcessingUrl("/login")
 		.defaultSuccessUrl("/utilisateurcontroller/goToMenu", true)
 		.failureUrl("/securitycontroller/login?error=true").permitAll().and().logout()
 		.invalidateHttpSession(true).logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
