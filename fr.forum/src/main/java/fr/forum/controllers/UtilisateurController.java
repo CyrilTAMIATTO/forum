@@ -3,7 +3,6 @@ package fr.forum.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,21 +11,11 @@ import fr.forum.dao.IUtilisateurJpaRepository;
 import fr.forum.entities.Utilisateur;
 
 @Controller
-@RequestMapping("/Forum")
-public class forumControlleur {
+@RequestMapping("/Utilisateur")
+public class UtilisateurController {
 
     @Autowired
     private IUtilisateurJpaRepository utilisateurJpaRepository;
-
-    @GetMapping("/Accueil")
-    public String accueil() {
-	return "accueil";
-    }
-
-    @GetMapping("/Authentification")
-    public String authentification() {
-	return "authentification";
-    }
 
     @PostMapping("/Identification")
     public String identification(@ModelAttribute(value = "utilisateur") Utilisateur utilisateur, Model model) {
@@ -40,11 +29,6 @@ public class forumControlleur {
 	} else {
 	    return "authentification";
 	}
-    }
-
-    @GetMapping("/Inscription")
-    public String inscription() {
-	return "inscription";
     }
 
     @PostMapping("/Creation")
