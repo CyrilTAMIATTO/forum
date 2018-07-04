@@ -1,10 +1,31 @@
 package fr.forum.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+
+@Entity
 public class Utilisateur {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @NotNull(message = "{error.utilisateur.pseudo.obligatoire}")
     private String pseudo;
+
+    @NotNull(message = "{error.utilisateur.email.obligatoire}")
     private String email;
+
+    @NotNull(message = "{error.utilisateur.motDePasse.obligatoire}")
     private String motDePasse;
+
+    @NotNull(message = "{error.utilisateur.role.obligatoire}")
+    @Enumerated(EnumType.STRING)
     private RoleUtilisateur role = RoleUtilisateur.ROLE_USER;
 
     public Utilisateur() {
