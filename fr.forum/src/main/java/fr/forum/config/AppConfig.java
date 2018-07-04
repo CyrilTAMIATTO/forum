@@ -8,9 +8,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @ImportResource("classpath:application-context.xml")
-@ComponentScan(basePackages = { "fr.formation.dao", "fr.formation.services" })
+@ComponentScan(basePackages = { "fr.forum.dao", "fr.forum.services" })
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = { "fr.formation.dao" })
+@EnableJpaRepositories(basePackages = { "fr.forum.dao" })
 public class AppConfig {
     //
 }
